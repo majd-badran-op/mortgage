@@ -1,0 +1,188 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200..800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+:root {
+  --Lime: hsl(61, 70%, 52%);
+  --Red: hsl(4, 69%, 50%);
+  --White: #fff;
+  --Slate100: hsl(202, 86%, 94%);
+  --Slate700: hsl(200, 24%, 40%);
+  --Slate900: hsl(202, 55%, 16%);
+}
+
+body {
+  background: var(--Slate100);
+}
+
+.container {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  background: var(--White);
+  border-radius: 20px;
+  width: 63em;
+}
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2.2rem;
+}
+.clear-button {
+  text-decoration: underline;
+  font-size: 0.95em;
+  color: var(--Slate700);
+  letter-spacing: 1px;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+}
+.amount {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+}
+.pound-symbol {
+  width: 40px;
+  border-radius: 5px 0 0 5px;
+  left: 1px;
+}
+.details-container,
+.results-container {
+  width: 50%;
+  padding: 2.5rem;
+}
+
+h1 {
+  color: var(--Slate900);
+}
+
+input {
+  width: 100%;
+  height: 45px;
+  border-radius: 5px;
+  border: 1px solid var(--Slate700);
+  padding: 10px 10px 10px 55px;
+  font-weight: 700;
+  font-size: 1em;
+}
+
+input:hover,
+input:focus-visible {
+  border-color: var(--Lime);
+  outline-color: var(--Lime);
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 12px;
+  border: 1px solid var(--Slate700);
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: 700;
+  color: var(--Slate900);
+}
+
+.option:hover {
+  background: hsla(61, 70%, 52%, 0.213);
+  border-color: var(--Lime);
+}
+
+.calculate-button {
+  margin-top: 2.2rem;
+  width: 300px;
+  padding: 15px;
+  border-radius: 50px;
+  border: none;
+  background: var(--Lime);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  cursor: pointer;
+}
+
+.results-container {
+  background: var(--Slate900);
+  border-radius: 0 20px 20px 80px;
+}
+
+.results-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.results-header h2 {
+  color: var(--White);
+  margin: 15px;
+}
+
+.monthly-repayment {
+  font-size: 3.2em;
+  margin: 25px 0;
+  color: var(--Lime);
+}
+
+@media (max-width: 800px) {
+  .container {
+    position: static;
+    margin: auto;
+    transform: none;
+    flex-direction: column;
+    width: 90%;
+  }
+  .details-container,
+  .results-container {
+    width: 100%;
+  }
+  .results-container {
+    border-radius: 0 0 20px 20px;
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 500px) {
+  h1 {
+    font-size: 1.4em;
+  }
+  .container {
+    width: 100%;
+    border-radius: 0;
+  }
+  .calculate-button {
+    width: 80%;
+    margin-inline: auto;
+  }
+}
+.error-msg {
+  color: var(--Red);
+  font-weight: 600;
+  font-size: 0.8em;
+}
+.term-interest-container {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  margin-top: 2.2rem;
+}
+.amount > label,
+.term-container > label,
+.interest-container > label,
+.type-container > label {
+  color: var(--Slate700);
+  font-size: 0.95em;
+  font-weight: 500;
+}
